@@ -1,0 +1,30 @@
+.navbar.navbar-inverse {
+  border-radius: 0;
+  background-color: $steel-blue;
+  color: $clouds;
+  .navbar-brand,  .navbar-text, .navbar-nav > li > a {
+    color: $clouds;
+  }
+  .navbar-nav > .active > a {
+    background-color: $clouds;
+  }
+  .navbar-text {
+    color: $clouds;
+  }
+  .navbar-link {
+    color: $clouds;
+  }
+
+  .navbar-header > h4 {
+    margin-top: 15px;
+    margin-bottom: 10px;
+  }
+
+  .navbar-header > h4 > a{
+    color: $clouds;
+  }
+
+  .navbar-header > h4 > a:hover{
+    text-decoration: none;
+  }
+}
