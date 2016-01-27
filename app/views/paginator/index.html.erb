@@ -1,0 +1,48 @@
+<div class="panel-body">
+  	<div class="form-group col-sm-8">
+    	<div class="form-inline">
+        <% @pages.each do | page | %> 
+        	<% if page[:key] == 0 %>
+        		<%= link_to "<<", pages_path(current_page: page[:value], numbers_per_page: @number_per_page), method: :post %>
+        	<% elsif page[:key] == 1 && page[:value] != 1 %>
+        		<%= link_to "<", pages_path(current_page: page[:value], numbers_per_page: @number_per_page), method: :post %>
+        	<% elsif page[:key] == 11 && page[:value] != @total_pages-2 %>
+        		<%= link_to ">", pages_path(current_page: page[:value], numbers_per_page: @number_per_page), method: :post %>
+      		<% elsif page[:key] == 12 %>
+        		<%= link_to ">>", pages_path(current_page: page[:value], numbers_per_page: @number_per_page), method: :post %>
+        	<% else %>
+         		<%= link_to page[:value], pages_path(current_page: page[:value], numbers_per_page: @number_per_page), method: :post %>
+      	 	<% end %>
+      	<% end %>
+    </div>
+  </div>
+
+  <div class="form-group col-sm-4">
+  	<p>Total Number Of Pages: <%= @total_pages %> </p>
+  </div>
+
+	<div class="form-group col-sm-8">
+			<%= form_tag(pages_path, method: :post) do %>
+				<%= label_tag :numbers_per_page %>
+				<%= text_field_tag :numbers_per_page %>
+				<%= submit_tag 'Change Number', current_page: nil %>
+			<% end %>
+		</div>
+</div>
+
+<div class="panel-body">
+  <table class="table table-condensed table-hover">
+    <thead>
+      <tr>
+        <th>Numbers</th>
+      </tr>
+    </thead>
+    <tbody>   
+      <% @numbers.each do | number | %> 
+        <tr>
+          <td><%= number %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
