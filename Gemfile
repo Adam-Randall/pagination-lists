@@ -35,6 +35,19 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
+  
+  # jazz hands gems - help with debugging
+  gem 'awesome_print'
+  gem 'coolline'
+  gem 'hirb'
+  gem 'bullet'
+  gem 'pry-rails'
+  gem 'pry-stack_explorer'
+  gem 'pry-nav'
+
+  gem 'minitest-reporters'
+  gem 'minitest-spec-rails'
+  gem 'minitest-rails-capybara'
 end
 
 group :development do
